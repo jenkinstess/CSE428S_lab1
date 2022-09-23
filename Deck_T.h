@@ -5,8 +5,11 @@
 //    virtual method.
 
 #pragma once
+#include "CardSet_T.h"
 
-class Deck{
+template <typename R, typename S> class Deck : public CardSet<R,S>{
     public:
-        virtual void print(std::ostream& os) = 0;
+        
 };
+
+

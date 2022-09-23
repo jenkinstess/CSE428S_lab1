@@ -6,9 +6,7 @@
 #include "Card_T.h"
 
 template <typename R, typename S>
-Card<R,S>::Card(R _rank, S _suit) {
-    rank = _rank;
-    suit = _suit;
+Card<R,S>::Card(R _rank, S _suit) : rank (_rank), suit (_suit) {
 }
 
 template <typename R, typename S>

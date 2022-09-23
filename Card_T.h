@@ -23,9 +23,6 @@ enum class Rank{
     king  = 13
 };
 
-//Rank _rank;
-//Suits _suit;
-
 template <typename R, typename S> 
 struct Card{
     R rank;

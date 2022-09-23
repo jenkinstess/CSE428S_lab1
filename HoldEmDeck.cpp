@@ -155,19 +155,19 @@ HoldEmDeck::HoldEmDeck() {
     cards = temp;
 }
 
-void HoldEmDeck::print(std::ostream& os) {
-    int temp = 1;
-    for (Card<HoldEmRank, Suits> c : cards) {
+// void HoldEmDeck::print(std::ostream& os) {
+//     int temp = 1;
+//     for (Card<HoldEmRank, Suits> c : cards) {
 
-        if (temp < PRINT) {
-           os << c << ", ";
-           ++temp; 
-        }
-        else{
-            os << c << std::endl;
-            temp = 1;
-        }
+//         if (temp < PRINT) {
+//            os << c << ", ";
+//            ++temp; 
+//         }
+//         else{
+//             os << c << std::endl;
+//             temp = 1;
+//         }
 	    
-    }
-    os << std::endl;
-}
+//     }
+//     os << std::endl;
+// }

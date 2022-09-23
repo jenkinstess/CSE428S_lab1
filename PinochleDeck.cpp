@@ -6,6 +6,7 @@
 
 #include "PinochleDeck.h"
 #define PRINT 6
+#define COPIES 2
 
 std::ostream& operator<<(std::ostream& os, const PinochleRank& pinRank){
 
@@ -84,7 +85,7 @@ PinochleDeck::PinochleDeck() {
     std::vector< Card<PinochleRank, Suits> > temp;
 
     //create 2 copies of each card
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < COPIES; ++i) {
 
         Suits curSuit = Suits::clubs;
 
@@ -106,23 +107,23 @@ PinochleDeck::PinochleDeck() {
     cards = temp;
 }
 
-void PinochleDeck::print(std::ostream& os) {
-    int temp = 1;
+// void PinochleDeck::print(std::ostream& os) {
+//     int temp = 1;
 
-    for (Card<PinochleRank, Suits> c : cards) {
+//     for (Card<PinochleRank, Suits> c : cards) {
 
-        if (temp < PRINT) {
-           os << c << ", ";
-           ++temp; 
-        }
-        else {
-            os << c << std::endl;
-            temp = 1;
-        }
+//         if (temp < PRINT) {
+//            os << c << ", ";
+//            ++temp; 
+//         }
+//         else {
+//             os << c << std::endl;
+//             temp = 1;
+//         }
 	    
-    }
+//     }
 
-    os << std::endl;
+//     os << std::endl;
 
-}
+// }
 

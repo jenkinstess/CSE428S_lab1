@@ -6,7 +6,7 @@
 
 #pragma once
 #include "Card_T.h"
-#include "Deck.h"
+#include "Deck_T.h"
 #include <vector>
 #include <ostream>
 
@@ -14,12 +14,10 @@ enum class PinochleRank{
     nine, jack, queen, king, ten, ace, undefined
 };
 
-class PinochleDeck : public Deck {
-    private:
-	std::vector< Card<PinochleRank, Suits> > cards;
+class PinochleDeck : public Deck<PinochleRank, Suits> {
     public:
-	PinochleDeck();
-	void print(std::ostream& os);
+	    PinochleDeck();
+
 };
 
 PinochleRank operator++(PinochleRank& _rank, int);

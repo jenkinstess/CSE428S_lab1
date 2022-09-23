@@ -6,7 +6,7 @@
 
 #pragma once
 #include "Card_T.h"
-#include "Deck.h"
+#include "Deck_T.h"
 #include <vector>
 #include <ostream>
 
@@ -14,12 +14,10 @@ enum class HoldEmRank{
     two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace, undefined
 };
 
-class HoldEmDeck : public Deck {
-    private:
-	std::vector< Card<HoldEmRank, Suits> > cards;
+class HoldEmDeck : public Deck <HoldEmRank, Suits> {
     public:
-	HoldEmDeck();
-	void print(std::ostream& os);
+	    HoldEmDeck();
+	
 };
 
 HoldEmRank operator++(HoldEmRank& _rank, int);

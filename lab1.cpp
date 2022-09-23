@@ -6,7 +6,7 @@
 
 #include "HoldEmDeck.h"
 #include "PinochleDeck.h"
-#include <ostream>
+#include <iostream>
 #define SUCCESS 0
 
 int main(){
@@ -14,8 +14,8 @@ int main(){
     HoldEmDeck h;
     PinochleDeck p;
 
-    h.print(std::cout);
-    p.print(std::cout);
+    h.print(std::cout, 52);
+    p.print(std::cout, 48);
 
     return SUCCESS; 
 }
