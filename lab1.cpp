@@ -14,8 +14,11 @@ int main(){
     HoldEmDeck h;
     PinochleDeck p;
 
-    h.print(std::cout, 52);
-    p.print(std::cout, 48);
+    h.shuffle();
+    p.shuffle();
+
+    h.print(std::cout, 100);
+    p.print(std::cout, 100);
 
     return SUCCESS; 
 }

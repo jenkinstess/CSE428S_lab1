@@ -1,16 +1,35 @@
 #include "CardSet_T.h"
 #include <iostream>
-
-// template <typename R, typename S>
-// CardSet<R,S>::CardSet(R _rank, S _suit) : rank (_rank), suit (_suit) {
-// }
+#include <iterator>
 
 template <typename R, typename S>
 void CardSet<R,S>::print(std::ostream& os, size_t size){
     
-    for(auto i = typename std::vector< Card<R,S> >::iterator begin(); i != typename vector< Card<R,S> >::iterator end(); ++i){
-        os << i << " ";
+    typename std::vector< Card<R, S> >::iterator it;
+    for(it = cards.begin(); it < cards.end(); it++){
+        if (size == 0) {break;}
+        --size;
+
+        os << *it << " ";
     }
+
     os << std::endl;
 
+}
+
+template <typename R, typename S>
+CardSet<R,S>& CardSet<R,S>::operator>>(CardSet<R,S>& cs) {
+
+    if (is_empty()) {
+        //throw runtime exception
+    }
+
+    cs.cards.push_back(cards.pop_back());
+
+    return *this;
+}
+
+template <typename R, typename S>
+bool CardSet<R,S>::is_empty() {
+    return cards.empty();
 }
