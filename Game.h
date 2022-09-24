@@ -8,4 +8,4 @@ public:
     virtual int play() = 0;
 protected:
     std::vector<std::string> players;
-}
+};
