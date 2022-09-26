@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game(int argc, char* argv[]) {
+Game::Game(int argc, const char* argv[]) {
     //parameters passed directly from command line ***
 
     std::vector<std::string> temp;

@@ -5,13 +5,11 @@
 
 class PinochleGame : public Game{
     public:
-        PinochleGame(int argc, const char *argv[]);
+        PinochleGame(int argc, const char* argv[]);
         virtual int play();
 
     protected:
         PinochleDeck _pDeck; 
-        std::vector< CardSet_T<PinochleRank, Suits> > _curHand;
+        std::vector< CardSet<PinochleRank, Suits> > _curHand;
         virtual void _deal();
-
-    private:
-}
+};
