@@ -1,6 +1,7 @@
 #pragma once
 #include "PinochleDeck.h"
 #include "CardSet_T.h"
+#include "Game.h"
 
 class PinochleGame : public Game{
     public:
