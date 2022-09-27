@@ -25,7 +25,7 @@ CardSet<R,S>& CardSet<R,S>::operator>>(CardSet<R,S>& cs) {
     }
     
 
-    //get the last element in the vector
+    // get the last element in the vector
     // push this element onto cs, the vector cardset
     // then do pop_back 
     cs.cards.push_back(cards.back());
