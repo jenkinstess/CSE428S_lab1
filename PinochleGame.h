@@ -10,6 +10,6 @@ class PinochleGame : public Game{
 
     protected:
         PinochleDeck _pDeck; 
+        virtual void deal();
         std::vector< CardSet<PinochleRank, Suits> > _curHand;
-        virtual void _deal();
 };
