@@ -23,8 +23,13 @@ CardSet<R,S>& CardSet<R,S>::operator>>(CardSet<R,S>& cs) {
     if (is_empty()) {
         //throw runtime exception
     }
+    
 
-    cs.cards.push_back(cards.pop_back());
+    //get the last element in the vector
+    // push this element onto cs, the vector cardset
+    // then do pop_back 
+    cs.cards.push_back(cards.back());
+    cards.pop_back();
 
     return *this;
 }

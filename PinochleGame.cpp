@@ -10,14 +10,12 @@ PinochleGame::PinochleGame(int argc, const char* argv[]) : Game(argc, argv) {
 void PinochleGame::deal() {
 
     typename std::vector< CardSet<PinochleRank, Suits> >::iterator it;
-    typename std::vector< Card<PinochleRank, Suits> >::iterator it1 = _pDeck.begin();
-    while (it1 != _pDeck.end()) {
-        for (it = _curHand.begin(); it < _curHand.end(); it++) {
 
-            it >> it1;
-            it >> it1++;
-            it >> it1++;
-            
+    while (!_pDeck.is_empty()) {
+        for (it = _curHand.begin(); it < _curHand.end(); it++) {
+            (*it) >> _pDeck;
+            (*it) >> _pDeck;
+            (*it) >> _pDeck;
         }
     }
     
