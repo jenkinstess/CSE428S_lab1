@@ -13,6 +13,6 @@ void Deck<R,S>::shuffle() {
 template<typename R,typename S>
 void Deck<R,S>::collect(CardSet<R,S>& cs) {
     while(!cs.is_empty()) {
-        cs >> this;
+        cs >> *this;
     }
 }

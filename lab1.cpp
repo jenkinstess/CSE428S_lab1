@@ -6,19 +6,24 @@
 
 #include "HoldEmDeck.h"
 #include "PinochleDeck.h"
+#include "PinochleGame.h"
 #include <iostream>
 #define SUCCESS 0
 
-int main(){
+int main(int argc, const char* argv[]){
     
-    HoldEmDeck h;
+    //HoldEmDeck h;
     PinochleDeck p;
 
-    h.shuffle();
-    p.shuffle();
+    //h.shuffle();
+    //p.shuffle();
 
-    h.print(std::cout, 100);
+    //h.print(std::cout, 100);
     p.print(std::cout, 100);
+    std::cout << std::endl;
+
+    PinochleGame g(argc, argv);
+    g.play();
 
     return SUCCESS; 
 }
