@@ -23,9 +23,14 @@ void PinochleGame::deal() {
 
     while (!_pDeck.is_empty()) {
         for (it = _curHand.begin(); it < _curHand.end(); it++) {
-            _pDeck >> (*it);
-            _pDeck >> (*it);
-            _pDeck >> (*it); 
+            try{
+                _pDeck >> (*it);
+                _pDeck >> (*it);
+                _pDeck >> (*it);
+            }
+            catch (std::runtime_error &e){
+                std::cout << "Runtime error: " << e.what();
+            }
         }
     }
     

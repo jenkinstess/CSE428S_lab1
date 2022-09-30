@@ -29,7 +29,12 @@ void HoldEmGame::deal() {
             typename std::vector< CardSet<HoldEmRank, Suits> >::iterator it;
             for (int i = 0; i < HAND_SIZE; ++i) {
                 for (it = hands.begin(); it < hands.end(); ++it) {
-                    deck >> (*it);
+                    try{
+                        deck >> (*it);
+                    }
+                    catch (std::runtime_error &e){
+                        std::cout << "Runtime error: " << e.what();
+                    }
                 }
             }
 
@@ -37,24 +42,38 @@ void HoldEmGame::deal() {
             break;
         }
         case HoldEmState::flop: {
-
-            deck >> board;
-            deck >> board;
-            deck >> board;
+            try{
+                deck >> board;
+                deck >> board;
+                deck >> board;
+            }
+            catch (std::runtime_error &e){
+                std::cout << "Runtime error: " << e.what();
+            }
 
             state = HoldEmState::turn;
             break;
         }   
         case HoldEmState::turn: {
 
-            deck >> board;
+            try{
+                deck >> board;
+            }
+            catch (std::runtime_error &e){
+                std::cout << "Runtime error: " << e.what();
+            }
 
             state = HoldEmState::river;
             break;
         }
         case HoldEmState::river: {
 
-            deck >> board;
+            try{
+                deck >> board;
+            }
+            catch (std::runtime_error &e){
+                std::cout << "Runtime error: " << e.what();
+            }
 
             state = HoldEmState::undefined;
             break;
