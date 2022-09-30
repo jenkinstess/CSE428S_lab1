@@ -36,19 +36,6 @@ int main(int argc, const char* argv[]) {
         return INCORRECTINPUT;
     }
 
-    //HoldEmDeck h;
-    PinochleDeck p;
-
-    //h.shuffle();
-    //p.shuffle();
-
-    //h.print(std::cout, 100);
-    p.print(std::cout, 100);
-    std::cout << std::endl;
-
-    PinochleGame g(argc, argv);
-    g.play();
-
     return SUCCESS; 
 }
 
