@@ -2,12 +2,14 @@
 #include <iostream>
 #include <iterator>
 
+#define EMPTYSET 0
+
 template <typename R, typename S>
 void CardSet<R,S>::print(std::ostream& os, size_t size){
     
     typename std::vector< Card<R, S> >::iterator it;
     for(it = cards.begin(); it < cards.end(); it++){
-        if (size == 0) {break;}
+        if (size == EMPTYSET) {break;}
         --size;
 
         os << *it << " ";
@@ -21,7 +23,7 @@ template <typename R, typename S>
 CardSet<R,S>& CardSet<R,S>::operator>>(CardSet<R,S>& cs) {
 
     if (is_empty()) {
-        //throw runtime exception
+        throw std::runtime_error("card set empty");
     }
     
 
