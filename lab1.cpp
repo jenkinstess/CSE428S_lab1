@@ -4,22 +4,29 @@
 // Contains the main function that prints the suit and rank for all the cards for
 //   poker and pinochle
 
-#include "HoldEmDeck.h"
-#include "PinochleDeck.h"
+#include "HoldEmGame.h"
 #include "PinochleGame.h"
 #include <iostream>
+#include <memory>
+#include <string.h>
 #define SUCCESS 0
-
 #define PINOCHLEPLAYERS 6 
 #define MINHOLDEMPLAYERS 4
 #define MAXHOLDEMPLAYERS 11
 #define INCORRECTINPUT 1
 #define NULLGAME 2
 
+std::shared_ptr<Game> create(int argc, const char* argv[]);
+
 int main(int argc, const char* argv[]) {
+
+    if (argc < 2) {
+        std::cout << "usage: filename gamename playername1 playername2 ..." << std::endl;
+        return INCORRECTINPUT;
+    }
     
-    if ((argv[1].equals("Pinochle") && argc == PINOCHLEPLAYERS)
-        || (argv[1].equals("HoldEm") && (argc >= MINHOLDEMPLAYERS && argc <= MAXHOLDEMPLAYERS))) {
+    if (((strcmp(argv[1],"Pinochle") == 0) && argc == PINOCHLEPLAYERS) 
+        || (((strcmp(argv[1], "HoldEm") == 0) && (argc >= MINHOLDEMPLAYERS && argc <= MAXHOLDEMPLAYERS)))) {
             
             std::shared_ptr<Game> gamePtr = create(argc, argv);
 
@@ -32,7 +39,7 @@ int main(int argc, const char* argv[]) {
             }
     }
     else{
-        std::cout << "usage: filename gamename playername1 playername2 ..." << std::endl;
+        std::cout << "usage: ./lab1 gamename playername1 playername2 ..." << std::endl;
         return INCORRECTINPUT;
     }
 
@@ -43,10 +50,10 @@ std::shared_ptr<Game> create(int argc, const char* argv[]) {
     
     std::shared_ptr<Game> game1;
 
-    if (argv[1].equals("Pinochle")) {
+    if (strcmp(argv[1],"Pinochle") == 0 ) {
         game1 = std::make_shared<PinochleGame>(argc, argv);
     }
-    else (argv[1].equals("HoldEm")) {
+    else {
         game1 = std::make_shared<HoldEmGame>(argc, argv);
     }
 
