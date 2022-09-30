@@ -1,8 +1,7 @@
-// Deck.h
+// Deck_T.h
 // Sam Saxon s.saxon@wustl.edu
 // Tess Jenkins jenkinstess@wustl.edu
-// Contains the creation of the abstract class Deck and the public pure 
-//    virtual method.
+// Contains the creation of the Deck class and the declaration for the public methods shuffle and collect.
 
 #pragma once
 #include "CardSet_T.h"

@@ -1,8 +1,7 @@
 // PinochleDeck.cpp
 // Sam Saxon s.saxon@wustl.edu
 // Tess Jenkins jenkinstess@wustl.edu
-// Contains shift and increment operator definitions, the constructor for pinochle, and
-//    the print definition for the pinochle deck
+// Contains shift and increment operator definitions, the constructor for pinochle.
 
 #include "PinochleDeck.h"
 #define NUM_COPIES 2
@@ -80,6 +79,7 @@ PinochleRank operator++(PinochleRank& _rank, int){
     return _rank;
 }
 
+// Ensures the correct number of and rank cards are properly added to the deck 
 PinochleDeck::PinochleDeck() {
     std::vector< Card<PinochleRank, Suits> > temp;
 

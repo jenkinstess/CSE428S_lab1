@@ -1,7 +1,13 @@
+// Deck_T.cpp
+// Sam Saxon s.saxon@wustl.edu
+// Tess Jenkins jenkinstess@wustl.edu
+// Contains the definitions for the shuffle and collect methods.
+
 #include "Deck_T.h"
 #include <random>
 #include <algorithm>
 
+// Randomizes the order of the cards, uses a Mersenne Twister pseudo-random generator to do so.
 template<typename R,typename S>
 void Deck<R,S>::shuffle() {
     std::random_device rd;

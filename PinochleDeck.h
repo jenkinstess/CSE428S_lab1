@@ -1,7 +1,7 @@
 // PinochleDeck.h
 // Sam Saxon s.saxon@wustl.edu
 // Tess Jenkins jenkinstess@wustl.edu
-// Contains shift and increment operator declarations, the inheritence of the abstract class,
+// Contains shift and increment operator declarations, the inheritence of the deck class,
 //   and the enumeration for the ranks of pinochle
 
 #pragma once

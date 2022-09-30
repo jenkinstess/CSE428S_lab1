@@ -1,9 +1,17 @@
+// HoldEmGame.cpp
+// Sam Saxon s.saxon@wustl.edu
+// Tess Jenkins jenkinstess@wustl.edu
+// Contains the definition for the constructor, the deal method, the play method, the collect all method, and the method printing out the players.
+
 #include "HoldEmGame.h"
 #define HAND_SIZE 2
 #define SUCCESS 0
+#define SIZESET 100
 
+// HoldEmGame constructor. Pushes all the current players passed in via the command line onto the memeber variable that 
+//  is a vector containing the hands of the current players
 HoldEmGame::HoldEmGame(int argc, const char* argv[]) : Game(argc, argv) {
-    for(int i = 0; i < argc-2; ++i){
+    for(int i = 0; i < argc-HAND_SIZE; ++i){
         CardSet<HoldEmRank, Suits> cs;
         hands.push_back(cs);
     }
@@ -11,7 +19,7 @@ HoldEmGame::HoldEmGame(int argc, const char* argv[]) : Game(argc, argv) {
     state = HoldEmState::preflop;
 }
 
-
+//deals out cards to each player, then to each state that the Texas hold em game is in.
 void HoldEmGame::deal() {
 
     switch (state) {
@@ -57,7 +65,7 @@ void HoldEmGame::deal() {
 
 }
 
-
+// Starts the play of the game, dealing out cards to the players and then simulating a game of poker.
 int HoldEmGame::play() {
     deck.shuffle();
     state = HoldEmState::preflop;
@@ -67,15 +75,15 @@ int HoldEmGame::play() {
 
     deal();
     std::cout << "BOARD (flop): ";
-    board.print(std::cout, 100);
+    board.print(std::cout, SIZESET);
 
     deal();
     std::cout << "BOARD (turn): ";
-    board.print(std::cout, 100);
+    board.print(std::cout, SIZESET);
 
     deal();
     std::cout << "BOARD (river): ";
-    board.print(std::cout, 100);
+    board.print(std::cout, SIZESET);
 
     collect_all();
 
@@ -97,7 +105,7 @@ void HoldEmGame::print_players() {
     
     while (it < hands.end()) {
         std::cout << (*p) << std::endl;
-        (*it).print(std::cout, 100);
+        (*it).print(std::cout, SIZESET);
         std::cout << std::endl;
 
         p++;

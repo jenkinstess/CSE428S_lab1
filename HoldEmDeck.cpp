@@ -1,8 +1,7 @@
 // HoldEmDeck.cpp
 // Sam Saxon s.saxon@wustl.edu
 // Tess Jenkins jenkinstess@wustl.edu
-// Contains shift and increment operator definitions, the constructor for the poker deck, and
-//    the print definition for the poker deck
+// Contains shift and increment operator definitions, and the constructor for the poker deck.
 
 #include "HoldEmDeck.h"
 #define PRINT 13 
@@ -136,6 +135,7 @@ HoldEmRank operator++(HoldEmRank& _rank, int){
     return _rank;
 }
 
+// Ensures the correct number of and rank cards are properly added to the deck
 HoldEmDeck::HoldEmDeck() {
     std::vector< Card<HoldEmRank, Suits> > temp;
 

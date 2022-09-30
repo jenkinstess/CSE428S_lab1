@@ -1,6 +1,14 @@
+// PinochleGame.cpp
+// Sam Saxon s.saxon@wustl.edu
+// Tess Jenkins jenkinstess@wustl.edu
+// Contains the definition for the constructor, the deal method, the play method, the collect all method, and the method printing out the players.
+
 #include "PinochleGame.h"
 #define SUCCESS 0
+#define SIZESET 100
 
+// PinochleGame constructor. Pushes all the current players passed in via the command line onto the memeber variable that 
+//  is a vector containing the hands of all the current players
 PinochleGame::PinochleGame(int argc, const char* argv[]) : Game(argc, argv) {
     for(int i = 0; i < argc-2; ++i){
         CardSet<PinochleRank, Suits> cs;
@@ -8,6 +16,7 @@ PinochleGame::PinochleGame(int argc, const char* argv[]) : Game(argc, argv) {
     }
 }
 
+// Cards are dealt out 3 at a time to each player, repeats until the deck is empty
 void PinochleGame::deal() {
 
     typename std::vector< CardSet<PinochleRank, Suits> >::iterator it;
@@ -16,7 +25,7 @@ void PinochleGame::deal() {
         for (it = _curHand.begin(); it < _curHand.end(); it++) {
             _pDeck >> (*it);
             _pDeck >> (*it);
-            _pDeck >> (*it); // need to check if empty so program doesn't crash
+            _pDeck >> (*it); 
         }
     }
     
@@ -50,7 +59,7 @@ void PinochleGame::print_players() {
     
     while (it < _curHand.end()) {
         std::cout << (*p) << std::endl;
-        (*it).print(std::cout, 100);
+        (*it).print(std::cout, SIZESET);
         std::cout << std::endl;
 
         p++;
