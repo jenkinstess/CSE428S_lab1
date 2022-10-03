@@ -5,12 +5,13 @@
 
 #include "PinochleGame.h"
 #define SUCCESS 0
+#define ARG_OFFSET 2
 #define SIZESET 100
 
 // PinochleGame constructor. Pushes all the current players passed in via the command line onto the memeber variable that 
 //  is a vector containing the hands of all the current players
 PinochleGame::PinochleGame(int argc, const char* argv[]) : Game(argc, argv) {
-    for(int i = 0; i < argc-2; ++i){
+    for(int i = 0; i < argc-ARG_OFFSET; ++i){
         CardSet<PinochleRank, Suits> cs;
         _curHand.push_back(cs);
     }

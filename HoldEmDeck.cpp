@@ -4,7 +4,6 @@
 // Contains shift and increment operator definitions, and the constructor for the poker deck.
 
 #include "HoldEmDeck.h"
-#define PRINT 13 
 
 std::ostream& operator<<(std::ostream& os, const HoldEmRank& _rank){
 

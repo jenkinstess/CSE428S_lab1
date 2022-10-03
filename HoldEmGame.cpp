@@ -4,6 +4,7 @@
 // Contains the definition for the constructor, the deal method, the play method, the collect all method, and the method printing out the players.
 
 #include "HoldEmGame.h"
+#define ARG_OFFSET 2
 #define HAND_SIZE 2
 #define SUCCESS 0
 #define SIZESET 100
@@ -11,7 +12,7 @@
 // HoldEmGame constructor. Pushes all the current players passed in via the command line onto the memeber variable that 
 //  is a vector containing the hands of the current players
 HoldEmGame::HoldEmGame(int argc, const char* argv[]) : Game(argc, argv) {
-    for(int i = 0; i < argc-HAND_SIZE; ++i){
+    for(int i = 0; i < argc-ARG_OFFSET; ++i){
         CardSet<HoldEmRank, Suits> cs;
         hands.push_back(cs);
     }
